@@ -3991,7 +3991,8 @@ h2o.relevel <- function(x,y) {
 #' GroupBy object; and \code{var} calculates the variance of each column specified in \code{col} for 
 #' each group of a GroupBy object. If an aggregate is provided without a value (for example, as 
 #' \code{max} in \code{sum(col="X1", na="all").mean(col="X5", na="all").max()}), then it is assumed 
-#' that the aggregation should apply to all columns except the GroupBy columns. Note again that 
+#' that the aggregation should apply to all columns except the GroupBy columns. However, operations
+#'  will not be performed on String columns.  They will be skipped.  Note again that
 #' \code{nrow} is required and cannot be empty.
 #'
 #' @param data an H2OFrame object.

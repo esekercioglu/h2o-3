@@ -38,7 +38,8 @@ class GroupBy(object):
     data types.
 
     If no arguments are given to the aggregation (e.g. "max" in the above example), then it is assumed that the
-    aggregation should apply to all columns but the group by columns.
+    aggregation should apply to all columns but the group by columns.  However, operations will not be performed
+    on String columns.  They will be skipped.
 
     All GroupBy aggregations take parameter na, which controls treatment of NA values during the calculation.
     It can be one of:
