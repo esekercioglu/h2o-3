@@ -16,7 +16,7 @@ ARG AWS_SECRET_ACCESS_KEY
 ENV DISTRIBUTION='hdp' \
     MASTER='yarn-client' \
     HADOOP_HOME=/usr/hdp/current/hadoop-client/ \
-    HADOOP_CONF_DIR=/usr/hdp/2*/hadoop/conf/ \
+    HADOOP_CONF_DIR=/etc/hadoop/conf \
     HADOOP_DAEMON=/usr/hdp/2*/hadoop/sbin/hadoop-daemon.sh \
     YARN_DAEMON=/usr/hdp/2*/hadoop-yarn/sbin/yarn-daemon.sh \
     MAPRED_USER=mapred \
@@ -105,7 +105,7 @@ RUN chmod 700 /usr/sbin/startup.sh && \
     sync && \
     /usr/sbin/install_hive.sh
 
-RUN /usr/sbin/install_ldap.sh
+# RUN /usr/sbin/install_ldap.sh
 
 # Expose ports
 # H2O, Hadoop UI, Hive, LDAP
